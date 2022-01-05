@@ -1,0 +1,4 @@
+---
+command_list:
+- logging host 10.131.253.15
+- logging host 10.143.253.15

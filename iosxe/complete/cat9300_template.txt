@@ -1,0 +1,24 @@
+! --------------------------
+! CAT9300 TEMPLATE CREATION
+! --------------------------
+!
+!
+hostname hptest
+!
+!
+interface TenGigabitEthernet1/1/1
+ description Primary link hpr1
+ no switchport
+ dampening
+ ip address 10.0.0.1 255.255.255.252
+ no ip redirects
+ ip pim sparse-mode
+ ip authentication mode eigrp 10 md5
+ ip authentication key-chain eigrp 10 eigrpauth
+ ip summary-address eigrp 10 172.18.200.0 255.255.248.0
+!
+exit
+!
+! -------------------------------------------------------------
+! END
+! -------------------------------------------------------------

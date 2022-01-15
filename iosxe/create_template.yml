@@ -1,0 +1,14 @@
+---
+
+- name: Creating tamplate
+  hosts: "127.0.0.1"
+  gather_facts: false
+  connection: local
+  vars_files: 
+    - /root/network_automation/iosxe/roles/create/vars/cat_9300_vars.yml
+
+  tasks:
+    - name: creating tamplate
+      ansible.builtin.template:
+        src: "/root/network_automation/iosxe/roles/create/templates/cat900_template.j2"
+        dest: "/root/network_automation/iosxe/complete/cat9300_template.txt"         

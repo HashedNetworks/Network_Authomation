@@ -10,5 +10,5 @@
   tasks:
     - name: creating tamplate
       ansible.builtin.template:
-        src: "/root/network_automation/iosxe/roles/create/templates/cat900_template.j2"
-        dest: "/root/network_automation/iosxe/complete/cat9300_template.txt"
+        src: "/root/network_automation/iosxe/roles/create/templates/cat9300_tem.j2"
+        dest: "/root/network_automation/iosxe/complete/cat9300_template.txt"         

@@ -4,11 +4,16 @@
   hosts: "127.0.0.1"
   gather_facts: false
   connection: local
+  vars_prompt:
+    - name: "hostname"
+      prompt: "Type Hostname?"
+      private: no
+
   vars_files: 
-    - /root/network_automation/iosxe/roles/create/vars/cat_9300_vars.yml
+    - /root/network_automation/iosxe/roles/create/vars/{{ hostname }}_vars.yml
 
   tasks:
     - name: creating tamplate
       ansible.builtin.template:
         src: "/root/network_automation/iosxe/roles/create/templates/cat9300_tem.j2"
-        dest: "/root/network_automation/iosxe/complete/cat9300_template.txt"         
+        dest: "/root/network_automation/iosxe/complete/{{ hostname }}.txt"

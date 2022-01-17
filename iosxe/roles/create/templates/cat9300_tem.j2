@@ -214,6 +214,7 @@ policy-map system-cpp-policy
 
 interface Loopback1
  ip address {{ item.ip }} 255.255.255.255
+ description {{ item.description }}
 !
 {% endfor %}
 !

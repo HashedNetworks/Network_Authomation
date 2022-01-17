@@ -1,0 +1,21 @@
+---
+num_of_lc: 2
+hostname: "Johnson101"
+default_gw: "172.21.93.1"
+
+
+dns_servers:
+  - dns1: "8.8.8.8"
+    dns2: "4.4.4.4"
+    dns3: "4.4.2.2"
+
+primary_po1:
+  - description: "Johnson101"
+
+secundary_po2:
+  - description: "Johnson101"
+    
+    
+interfaces_vlan:
+  - ip_vlan3: "192.168.22.1"
+  - desc: "mgmt interface"  

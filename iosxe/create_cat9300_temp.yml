@@ -1,19 +1,19 @@
 ---
 
-- name: Creating tamplate
+- name: Cat9300 Temaplate Creation
   hosts: "127.0.0.1"
   gather_facts: false
   connection: local
   vars_prompt:
     - name: "hostname"
-      prompt: "Type Hostname?"
+      prompt: "Type Cat9300's Hostname?"
       private: no
 
   vars_files: 
     - /root/network_automation/iosxe/roles/create/vars/{{ hostname }}_vars.yml
 
   tasks:
-    - name: creating tamplate
+    - name: Creating Tamplate
       ansible.builtin.template:
         src: "/root/network_automation/iosxe/roles/create/templates/cat9300_tem.j2"
         dest: "/root/network_automation/iosxe/complete/{{ hostname }}.txt"

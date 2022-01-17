@@ -284,7 +284,7 @@ interface TenGigabitEthernet1/1/1
 !
 !
 interface Te3/1/1
- description Secundady link hpr2
+ description Secundary link hpr2
  no switchport
  dampening
  ip address 10.0.0.3 255.255.255.252

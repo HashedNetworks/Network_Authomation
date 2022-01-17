@@ -19,7 +19,7 @@ primary_interface:
 
 secundary_interface:
   - name: "Te{{ num_of_lc }}/1/1"
-    description: "Secundady link hpr2"
+    description: "Secundary link hpr2"
     ip: "10.0.0.3"
     mask: "255.255.255.252"   
     sum_addr: "10.0.0.0"

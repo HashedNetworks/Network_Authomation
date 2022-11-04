@@ -1,0 +1,6 @@
+###### Requirements without Version Specifiers ######
+netaddr
+pyyaml
+pylint
+jinja2
+paramiko

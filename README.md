@@ -12,4 +12,6 @@ Documentation describing what is the code on this repo do, examples, requirement
 
 ## How to use test code
 
-> python main_script.py
+```bash
+python main_script.py
+```

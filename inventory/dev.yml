@@ -1,0 +1,11 @@
+---
+devices:
+  - hostname: router1
+    ipv4: 192.168.1.200
+    network_os: ios
+  - hostname: router2
+    ipv4: 192.168.1.201
+    network_os: ios
+  - hostname: router3
+    ipv4: 192.168.1.202
+    network_os: ios

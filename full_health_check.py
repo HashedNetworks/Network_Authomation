@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'/home/andreoss/network_automation/Python Scripts/Network Automation/Network Tools')
+sys.path.insert(0,'/home/andreoss/Network Automation/module_utils/')
 from net_tools import *
 
 def main():

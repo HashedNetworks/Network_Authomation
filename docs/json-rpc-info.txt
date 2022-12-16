@@ -1,0 +1,25 @@
+jsonrpc Request Format:
+=======================
+
+The fields–‘jsonrpc’, ‘method’, ‘params’, and ‘id’ are all required by the JSON-RPC specification. 
+These fields specify the version (jsonrpc 2.0), a remote action (the ‘method’), the arguments to send (the ‘params’), 
+and an identifier so you can match the request to the response.
+
+For Arista, the ‘method’ is always ‘runCmds’.  
+This is the method that will be executed on the Arista switch.  
+The ‘params’ field contains a set of subfields including ‘version’ (which is currently always set to 1) and ‘cmds’.  
+The ‘cmds’ subfield specifies the commands to run on the switch. This is set to [“show version”] above.  
+Note, the ‘cmds’ subfield is an array of commands (i.e. you can specify multiple commands here).
+
+{
+  "jsonrpc": "2.0",
+  "method": "runCmds",
+  "params": {
+    "version": 1,
+    "cmds": [ "show version" ],
+    "format": "jsontext"
+  },
+  "id": "identifier"
+}
+
+jsonrpc Response Format:

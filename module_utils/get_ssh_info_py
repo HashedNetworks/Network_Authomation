@@ -1,0 +1,39 @@
+import yaml
+
+# Finds IP and IOS code for given hostname 
+def get_ssh_info(hostname:list):
+
+    # Converitng inventory YML file to python list.
+    #=====================================================================================================================
+    with open('/home/andreoss/network_automation/Python Scripts/Network Automation/inventory.yml', 'r') as inventory_dic:
+        try:
+        # Converts yaml document to python object
+            invent_dic=yaml.safe_load(inventory_dic)
+        
+        # Printing dictionary
+            #print(d)
+        except yaml.YAMLError as e:
+            print(e)
+    
+    #Getting hostame info: IP and Device-Type for SSH conenction
+    #=====================================================================================================================
+    devices = []
+    device = {}
+    for num_hn in hostname:
+        for platform, value in invent_dic['devices'].items():
+            for hn in invent_dic['devices'][platform].keys():
+                if hn == num_hn:
+
+                    host = invent_dic['devices'][platform][hn]['host']
+                    device_type = invent_dic['devices'][platform][hn]['device_type']
+
+                    device = {
+                        'device_type' : device_type,
+                        'host' : host,
+                        'username' : 'agarcia',
+                        'password' : 'cisco123',
+                         }
+
+                    devices.append(device)
+                
+    return devices

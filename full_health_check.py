@@ -1,4 +1,5 @@
 import sys
+from module_utils.net_tools import get_ssh_info
 sys.path.insert(0,'/home/andreoss/Network Automation/module_utils/')
 from net_tools import *
 

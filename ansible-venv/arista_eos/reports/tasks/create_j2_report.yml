@@ -1,0 +1,11 @@
+---
+
+- name: debug
+  debug:
+    msg: "{{hostname}}"
+
+- name: CREATE TEMPLATE
+  template:
+    src: reports/templates/packet_drops.j2
+    dest: completed_reports/packet_drops/edge-01/"{{ hostname }}".txt
+  delegate_to: localhost

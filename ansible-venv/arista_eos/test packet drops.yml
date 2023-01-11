@@ -1,0 +1,17 @@
+---
+- name: testing
+  hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: hostname
+      prompt: Enter hostname
+      private:  no
+  vars:
+    hostaname:
+
+
+  - name: REPORT ROLE
+    include_role:
+      name: reports
+      tasks_from: packet_drops
+

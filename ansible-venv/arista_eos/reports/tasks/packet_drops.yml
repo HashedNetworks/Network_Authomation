@@ -1,0 +1,10 @@
+---
+- name: GETTING INTERFACES DATA
+  eos_command:
+    commands:
+      - show interface | json
+  register: output
+
+- name: DISPLAY OUTPUT
+  debug:
+    msg: "{{output.stdout[0].interfaces.Ethernet1}}"

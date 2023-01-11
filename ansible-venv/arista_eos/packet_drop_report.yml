@@ -1,0 +1,34 @@
+---
+- name: BUILDING REPORT
+  # vars_prompt:
+  #   - name: hostname
+  #     prompt: "Enter hostname: "
+  #     private:  no
+  hosts: edge-01
+  gather_facts: no
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+
+  - name: REPORT ROLE
+    include_role:
+      name: reports
+      tasks_from: packet_drops
+
+
+  - name: CREATE TEMPLATE
+    copy:
+      src: "{{output}}"
+      dest: edge-01.txt
+    delegate_to: localhost
+
+# - name: BUILDING REPORT
+#   hosts: localhost
+#   connection: local
+
+#   tasks:
+
+#   - name: JINJA ROLE
+#     include_role:
+#       name: reports
+#       tasks_from: create_j2_report
